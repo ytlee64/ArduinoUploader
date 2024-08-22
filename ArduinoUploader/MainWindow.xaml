@@ -1,0 +1,47 @@
+﻿<Window x:Class="ArduinoUploader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArduinoUploader"
+        mc:Ignorable="d"
+        Title="ArduinoUploader" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="ProgrammerName:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="ProgrammerName" Grid.Row="0" Grid.Column="1" Margin="5" TextWrapping="Wrap" IsReadOnly="True" />
+
+        <Label Content="ProcessName:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="ProcessName" Grid.Row="1" Grid.Column="1" Margin="5" TextWrapping="Wrap" IsReadOnly="True" />
+
+        <Label Content="Baud:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="Baud" Grid.Row="2" Grid.Column="1" Margin="5" TextWrapping="Wrap" IsReadOnly="True" />
+
+        <Label Content="Filename:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox x:Name="Filename" Grid.Row="3" Grid.Column="1" Margin="5" TextWrapping="Wrap" IsReadOnly="True" />
+
+        <Label Content="Port:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+        <ComboBox x:Name="SerialPortComboBox" Grid.Row="4" Grid.Column="1" Margin="5" IsReadOnly="True" />
+
+        <TextBox x:Name="OutputTextBox" Text="{Binding OutputText, UpdateSourceTrigger=PropertyChanged}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" 
+                 Margin="5" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap" IsReadOnly="True" FontFamily="Consolas"  
+                 TextChanged="OutputTextBox_TextChanged"/>
+
+        <Button Content="Upload" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" 
+                Margin="5" Click="RunAvrdude_Click"/>
+    </Grid>
+</Window>
