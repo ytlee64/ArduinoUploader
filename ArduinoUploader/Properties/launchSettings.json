@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ArduinoUploader": {
+      "commandName": "Project",
+      "workingDirectory": "./work"
+    }
+  }
+}
