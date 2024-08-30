@@ -26,7 +26,7 @@ namespace ArduinoUploader
 {
     public partial class MainWindow : Window
     {
-        public static string OutputText;
+        public static string OutputText="";
         public MainWindow()
         {
             InitializeComponent();
